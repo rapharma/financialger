@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app" >
+<html ng-app="app">
 <meta charset="utf-8">
 <head>
 	<title>Home</title>
@@ -9,12 +9,21 @@
 <h1>Lista de produtos</h1>
 
 <div class="conteudoIndex" ng-controller="indexController">
-
-<input type="text" id="nomeproduto" placeholder="produto">
-<input type="number" id="precoproduto" placeholder="0,00">	
-<button type="button">Adicionar</button>
-<button type="button">Total</button>	
+	<form>
 	
+		<ul ng-repeat="product in products">
+			<li>
+				{{ product.nome }} 
+				{{ product.price + " R$" }} 
+			</li>
+		</ul>
+	
+		<input type="text" id="nameproduto" placeholder="Nome do produto">
+		<input type="number" id="priceproduto" placeholder="Valor do produto">	
+		<button type="submit" ng-click="addProduct()">Adicionar</button>
+	
+	</form>
+ 
 </div>
 
 <script src="js/angular.min.js"></script>
