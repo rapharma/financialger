@@ -7,7 +7,12 @@ app.controller('indexController', function($scope){
 		var name = document.getElementById("nameproduto");
 		var price = document.getElementById("priceproduto");
 
-		$scope.products.push({ nome : nameproduto.value, price : priceproduto.value })
+		$scope.products.push(
+			{ 
+				nome : nameproduto.value, 
+				price : priceproduto.value 
+			}
+		)
 	
 		nameproduto.value = "";
 		priceproduto.value = "";
